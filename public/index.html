@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <h1>🌤️ Weather Dashboard</h1>
+        <div class="controls">
+          <select id="languageSelect" aria-label="Language">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+          </select>
+          <button id="themeToggle">🌙 Toggle theme</button>
+        </div>
+      </header>
+
+      <section class="search-row">
+        <input id="locationInput" placeholder="Search city (e.g. Tokyo)" />
+        <button id="searchButton">Search</button>
+        <button id="geoButton">Use my location</button>
+      </section>
+
+      <section id="status" class="status"></section>
+
+      <section class="grid">
+        <article class="card" id="currentCard"></article>
+        <article class="card" id="airCard"></article>
+      </section>
+
+      <section class="card">
+        <h2>24-Hour Forecast</h2>
+        <canvas id="hourlyChart" height="90"></canvas>
+      </section>
+
+      <section class="card">
+        <h2>7-Day Forecast</h2>
+        <div id="dailyGrid" class="daily-grid"></div>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>Weather Map</h2>
+          <div id="map"></div>
+        </article>
+        <article class="card">
+          <h2>Compare Locations</h2>
+          <input id="compareInput" placeholder="Paris, Tokyo" />
+          <button id="compareButton">Compare</button>
+          <div id="compareResults"></div>
+        </article>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>Favorites</h2>
+          <div id="favorites"></div>
+        </article>
+        <article class="card">
+          <h2>Historical (last 7 days)</h2>
+          <div id="historical"></div>
+        </article>
+      </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
